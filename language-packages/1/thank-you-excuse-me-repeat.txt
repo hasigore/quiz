@@ -1,6 +1,6 @@
-grazie_mille:3
-prego:2
-scusa:1
-mi_dispiace:2
-per_favore:3
-per_piacere:2
+grazie_mille:0
+prego:0
+scusa:0
+mi_dispiace:0
+per_favore:0
+per_piacere:0
