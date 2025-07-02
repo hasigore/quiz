@@ -1,45 +1,45 @@
 import os
 
-from utils import normalize_text
+from sources.utils import normalize_text
 
-def get_translations_from_file(translation_file, separator):
-    with open(translation_file, 'r', encoding='utf-8') as f:
+def get_decks_from_file(deck_file, separator):
+    with open(deck_file, 'r', encoding='utf-8') as f:
         heading = f.readline().strip()
         url = f.readline().strip()
 
-        translations = []
+        decks = []
         for line in f:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
             if separator in line:
                 lang1, lang2 = line.split(separator, 1)
-                translations.append((lang1.strip(), lang2.strip()))
+                decks.append((lang1.strip(), lang2.strip()))
             else:
                 print(f"Warning: line does not contain '{separator}': {line}")
 
-    return translations
+    return decks
 
-def get_heading_from_file(translation_file):
-    with open(translation_file, 'r', encoding='utf-8') as f:
+def get_heading_from_file(deck_file):
+    with open(deck_file, 'r', encoding='utf-8') as f:
         heading = f.readline().strip()
         url = f.readline().strip()
 
     return heading
 
 
-def get_url_from_file(translation_file):
-    with open(translation_file, 'r', encoding='utf-8') as f:
+def get_url_from_file(deck_file):
+    with open(deck_file, 'r', encoding='utf-8') as f:
         heading = f.readline().strip()
         url = f.readline().strip()
 
     return url
 
-def create_repeat_file_if_missing(repeat_file, translations, repeat, separator):
+def create_repeat_file_if_missing(repeat_file, decks, repeat, separator):
     if not os.path.exists(repeat_file):
         print(f"Initialize repeat file: {repeat_file}\n")
         with open(repeat_file, 'w', encoding='utf-8') as f:
-            for source, target in translations:
+            for source, target in decks:
                 normalized_source = normalize_text(source)
                 f.write(f"{normalized_source}{separator}{repeat}\n")
 

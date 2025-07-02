@@ -14,8 +14,8 @@ class Config:
         return self._config.getint(section, option, fallback=fallback)
     
     @property
-    def translation_file(self):
-        path = self.get('Settings', 'translation_file').strip("'\"")
+    def deck_file(self):
+        path = self.get('Settings', 'deck_file').strip("'\"")
         return os.path.abspath(path)
     
     @property
@@ -29,12 +29,12 @@ class Config:
     
     @property
     def repeat_file(self):
-        repeat_file = self.translation_file.replace('.txt', '-repeat.txt')
+        repeat_file = self.deck_file.replace('.txt', '-repeat.txt')
         return repeat_file
     
     @property
     def reverse_repeat_file(self):
-        reverse_repeat_file = self.translation_file.replace('.txt', '-reverse-repeat.txt')
+        reverse_repeat_file = self.deck_file.replace('.txt', '-reverse-repeat.txt')
         return reverse_repeat_file
     
     @property

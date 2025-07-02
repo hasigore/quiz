@@ -1,18 +1,18 @@
-from config import Config
-from translation import Translation
-from quiz import Quiz
+from sources.config import Config
+from sources.deck import Deck
+from sources.quiz import Quiz
 #from input import get_single_key
 
 def main():
-    config_file = 'config.ini'
+    config_file = 'decks/1/config.ini'
     config = Config(config_file=config_file)
 
-    translation = Translation(config=config)
+    deck = Deck(config=config)
 
-    quiz = Quiz(config=config, translation=translation)
+    quiz = Quiz(config=config, deck=deck)
     
-    print(f"\nHeading: {translation.heading}")
-    print(f"YouTube URL: {translation.url}\n")
+    print(f"\nHeading: {deck.heading}")
+    print(f"YouTube URL: {deck.url}\n")
     
     quiz.loop()
     quiz.loop_reverse()

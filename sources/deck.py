@@ -1,6 +1,6 @@
-from file import get_translations_from_file, get_heading_from_file, get_url_from_file, create_repeat_file_if_missing, refresh_repeats, save_repeats
+from sources.file import get_decks_from_file, get_heading_from_file, get_url_from_file, create_repeat_file_if_missing, refresh_repeats, save_repeats
 
-class Translation:
+class Deck:
     def __init__(self, config):
         self._config = config 
 
@@ -9,8 +9,8 @@ class Translation:
         return self._config.language
     
     @property
-    def translation_file(self):
-        return self._config.translation_file
+    def deck_file(self):
+        return self._config.deck_file
     
     @property
     def separator(self):
@@ -21,20 +21,20 @@ class Translation:
     @property
     def heading(self):
         if not hasattr(self, '_heading'):
-            self._heading = get_heading_from_file(self.translation_file)
+            self._heading = get_heading_from_file(self.deck_file)
         return self._heading
     
     @property
     def url(self):
         if not hasattr(self, '_url'):
-            self._url = get_url_from_file(self.translation_file)
+            self._url = get_url_from_file(self.deck_file)
         return self._url
     
     @property
-    def translations(self):
-        if not hasattr(self, '_translations'):
-            self._translations = get_translations_from_file(self.translation_file, self.separator)
-        return self._translations
+    def decks(self):
+        if not hasattr(self, '_decks'):
+            self._decks = get_decks_from_file(self.deck_file, self.separator)
+        return self._decks
     
     @property
     def repeat(self):
@@ -54,13 +54,13 @@ class Translation:
     
     @property
     def repeats(self):
-        create_repeat_file_if_missing(self.repeat_file, self.translations, self.repeat, self.separator)
+        create_repeat_file_if_missing(self.repeat_file, self.decks, self.repeat, self.separator)
         self._repeats = refresh_repeats(self.repeat_file, self.separator)
         return self._repeats
     
     @property
     def reverse_repeats(self):
-        create_repeat_file_if_missing(self.reverse_repeat_file, self.translations, self.reverse_repeat, self.separator)
+        create_repeat_file_if_missing(self.reverse_repeat_file, self.decks, self.reverse_repeat, self.separator)
         self._reverse_repeats = refresh_repeats(self.reverse_repeat_file, self.separator)
         return self._reverse_repeats
     
