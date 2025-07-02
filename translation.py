@@ -14,6 +14,8 @@ class Translation:
     
     @property
     def separator(self):
+        separator = self._config.separator
+        #print(f"Using separator: _{separator}_")
         return self._config.separator
     
     @property

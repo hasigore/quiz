@@ -15,7 +15,7 @@ class Config:
     
     @property
     def translation_file(self):
-        path = self.get('Settings', 'translation_file')
+        path = self.get('Settings', 'translation_file').strip("'\"")
         return os.path.abspath(path)
     
     @property
@@ -24,7 +24,7 @@ class Config:
 
     @property
     def audio_folder(self):
-        path = self.get('Settings', 'audio_folder')
+        path = self.get('Settings', 'audio_folder').strip("'\"")
         return os.path.abspath(path)
     
     @property
@@ -39,15 +39,15 @@ class Config:
     
     @property
     def separator(self):
-        return self.get('Settings', 'separator', fallback=' : ')
+        return self.get('Settings', 'separator', fallback=' : ').strip("'\"")
     
     @property
     def language(self):
-        return self.get('Settings', 'language', fallback='it')
+        return self.get('Settings', 'language', fallback='it').strip("'\"")
     
     @property
     def audio_extension(self):
-        return self.get('Settings', 'audio_extension', fallback='mp3')
+        return self.get('Settings', 'audio_extension', fallback='mp3').strip("'\"")
     
     @property
     def reverse_repeat(self):
