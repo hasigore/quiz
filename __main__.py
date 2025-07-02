@@ -1,7 +1,6 @@
 from sources.config import Config
 from sources.deck import Deck
 from sources.quiz import Quiz
-#from input import get_single_key
 
 def main():
     config_file = 'decks/1/config.ini'
