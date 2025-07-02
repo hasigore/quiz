@@ -21,10 +21,15 @@ class Quiz:
         self.audio.generate_and_save_sound_if_missing(text, lang, sound_file)
     
     def still_items_to_repeat(self):
-        return any(value > 0 for value in self.translation.repeats.values())
+        if self.number_of_items_to_repeat(self.translation.repeats) > 0:
+            return True
     
     def still_items_to_reverse_repeat(self):
-        return any(value > 0 for value in self.translation.reverse_repeats.values())
+        if self.number_of_items_to_repeat(self.translation.reverse_repeats) > 0:
+            return True
+    
+    def number_of_items_to_repeat(self, repeats):
+        return sum(1 for value in repeats.values() if value > 0)
 
     def loop(self):
         # Assign a "repeat count" to each sentence; start with 3 repetitions each
@@ -34,18 +39,27 @@ class Quiz:
         #for phrase, repeat_count in self.translation.repeats.items():
         #    print(f"Phrase: {phrase} - Repeat count: {repeat_count}")
         current_normalized_phrase = None
+        last_n_phrases = []
+        number_of_phrases_to_remember = 3  # Number of phrases to remember in the last_n_phrases list
         while self.still_items_to_repeat():
 
             new_current_normalized_phrase = random.choice(list(self.translation.repeats.keys()))
-            if new_current_normalized_phrase == current_normalized_phrase:
-                continue
-            current_normalized_phrase = new_current_normalized_phrase
-
+            
             #print(f"Current phrase: {current_normalized_phrase}")
-            current_repeat_count = self.translation.repeats[current_normalized_phrase]
+            current_repeat_count = self.translation.repeats[new_current_normalized_phrase]
             #print(f"Current repeat count: {current_repeat_count}")
             if current_repeat_count <= 0:
                 continue
+            
+            number_of_items_to_repeat = self.number_of_items_to_repeat(self.translation.repeats)
+            if new_current_normalized_phrase in last_n_phrases and number_of_items_to_repeat > number_of_phrases_to_remember:
+                print(f"Skipping phrase {new_current_normalized_phrase} as it is in the last {number_of_phrases_to_remember} phrases.")
+                print(f"Last phrases: {last_n_phrases}")
+                continue
+            current_normalized_phrase = new_current_normalized_phrase
+            last_n_phrases.append(current_normalized_phrase)
+            if len(last_n_phrases) > number_of_phrases_to_remember:
+                last_n_phrases.pop(0)
 
             current_index = list(self.translation.repeats.keys()).index(current_normalized_phrase)   
             source, target = self.translation.translations[current_index]
@@ -91,20 +105,26 @@ class Quiz:
         while self.still_items_to_reverse_repeat():
 
             new_current_normalized_phrase = random.choice(list(self.translation.reverse_repeats.keys()))
-            if new_current_normalized_phrase in last_n_phrases:
-                print(f"Skipping phrase {new_current_normalized_phrase} as it is in the last {number_of_phrases_to_remember} phrases.")
+
+            #print(f"Current phrase: {current_normalized_phrase}")
+            current_repeat_count = self.translation.reverse_repeats[new_current_normalized_phrase]
+            #print(f"Current repeat count: {current_repeat_count}")
+
+            if current_repeat_count <= 0:
+                continue
+
+            number_of_items_to_repeat = self.number_of_items_to_repeat(self.translation.reverse_repeats)
+            #print(f"number_of_items_to_repeat: {number_of_items_to_repeat}")
+            #print(f"Last {number_of_phrases_to_remember} phrases : {last_n_phrases}.")
+            if new_current_normalized_phrase in last_n_phrases and number_of_items_to_repeat > number_of_phrases_to_remember:
+                #print(f"Skipping phrase {new_current_normalized_phrase} as it is in the last {number_of_phrases_to_remember} phrases.")
+                #print(f"Last phrases: {last_n_phrases}")
                 continue
 
             current_normalized_phrase = new_current_normalized_phrase
             last_n_phrases.append(current_normalized_phrase)
             if len(last_n_phrases) > number_of_phrases_to_remember:
                 last_n_phrases.pop(0)
-
-            #print(f"Current phrase: {current_normalized_phrase}")
-            current_repeat_count = self.translation.reverse_repeats[current_normalized_phrase]
-            #print(f"Current repeat count: {current_repeat_count}")
-            if current_repeat_count <= 0:
-                continue
 
             current_index = list(self.translation.reverse_repeats.keys()).index(current_normalized_phrase)   
             source, target = self.translation.translations[current_index]
@@ -125,9 +145,9 @@ class Quiz:
             self.audio.generate_and_save_sound_if_missing(text=source, lang=self.translation.language, sound_file=sound_file)
             self.audio.play(sound_file)
             
-            if current_repeat_count == self.translation.reverse_repeat:
-                time.sleep(3)  # Wait for 3 seconds before playing the sound again
-                self.audio.play(sound_file)
+            #if current_repeat_count == self.translation.reverse_repeat:
+            #    time.sleep(3)  # Wait for 3 seconds before playing the sound again
+            #    self.audio.play(sound_file)
 
             if user_input == '1':
                 self.translation.decrement_reverse_repeat(phrase=current_normalized_phrase)
