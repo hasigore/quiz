@@ -7,6 +7,9 @@ class Audio:
         self.audio_folder = audio_folder
 
     def generate_and_save_sound_if_missing(self, text, lang, sound_file):
+        folder = os.path.dirname(sound_file)
+        if folder and not os.path.exists(folder):
+            os.makedirs(folder)
         if not os.path.exists(sound_file):
             tts = gTTS(text=text, lang=lang)
             tts.save(sound_file)    

@@ -71,4 +71,4 @@ desktop.ini
 
 # Custom: Ignore audio and count files (example)
 *.mp3
-*.count.txt
+*.repeat.txt
