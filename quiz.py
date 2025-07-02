@@ -53,8 +53,8 @@ class Quiz:
             
             number_of_items_to_repeat = self.number_of_items_to_repeat(self.translation.repeats)
             if new_current_normalized_phrase in last_n_phrases and number_of_items_to_repeat > number_of_phrases_to_remember:
-                print(f"Skipping phrase {new_current_normalized_phrase} as it is in the last {number_of_phrases_to_remember} phrases.")
-                print(f"Last phrases: {last_n_phrases}")
+                #print(f"Skipping phrase {new_current_normalized_phrase} as it is in the last {number_of_phrases_to_remember} phrases.")
+                #print(f"Last phrases: {last_n_phrases}")
                 continue
             current_normalized_phrase = new_current_normalized_phrase
             last_n_phrases.append(current_normalized_phrase)

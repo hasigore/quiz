@@ -1,0 +1,6 @@
+grazie_mille:3
+prego:2
+scusa:1
+mi_dispiace:2
+per_favore:3
+per_piacere:2

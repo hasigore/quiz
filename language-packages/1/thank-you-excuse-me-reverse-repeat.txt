@@ -1,0 +1,6 @@
+grazie_mille:4
+prego:4
+scusa:4
+mi_dispiace:4
+per_favore:4
+per_piacere:4
