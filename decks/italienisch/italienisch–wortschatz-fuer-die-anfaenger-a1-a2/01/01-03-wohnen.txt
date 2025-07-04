@@ -1,0 +1,43 @@
+a casa : zu Hause  
+Sei a casa? : Bist du zu Hause?  
+Ho bisogno di andare in bagno : Ich muss auf die Toilette  
+Devo andare in bagno. Prima porta a sinistra. : Ich muss auf die Toilette. Die erste Tür links  
+piatti : Geschirr  
+Lava i piatti. : Spül das Geschirr  
+soggiorno : Wohnzimmer  
+È in soggiorno. : Es ist im Wohnzimmer  
+lavare i piatti : das Geschirr spülen  
+Per favore, lavate i piatti. : Spült bitte das Geschirr  
+serratura : Schloss  
+Una serratura di sicurezza dovrebbe essere installata qui. : Hier sollte ein Sicherheitsschloss angebracht werden  
+radersi : rasieren  
+Mi rado ogni mattina. : Ich rasiere mich jeden Morgen  
+accendere la luce : ein Licht einschalten  
+Può accendere la luce, per favore? : Könnten Sie bitte das Licht einschalten?  
+Mi rado ogni mattina. : Ich rasiere mich jeden Morgen  
+Io sono a casa, ma lui no. : Ich bin zu Hause, aber er ist nicht da  
+Voglio solo stare nel mio letto. : Ich will nur im Bett liegen  
+Sono all'interno? : Sind sie drinnen?  
+Qual è il tuo indirizzo? : Wie lautet deine Adresse?  
+Dove vive? : Wo wohnt sie denn?  
+Sarò a casa per mezzanotte. : Ich werde um Mitternacht zu Hause sein  
+Siediti sulla sedia. : Setz dich auf den Stuhl  
+È il tuo libro? : Ist das dein Buch?  
+Di solito è a casa. : Er ist normalerweise zu Hause  
+Lui è a casa. : Er ist zu Hause  
+A che ora ti alzi? : Um wie viel Uhr stehst du auf?  
+Abita al quinto piano. : Er wohnt im fünften Stock  
+È molto comodo. : Es ist sehr bequem  
+Vive nel sud dell'Inghilterra. : Sie wohnt in Südengland  
+Puoi chiudere la porta? : Kannst Du die Tür schließen?  
+Vado a casa. : Ich gehe nach Hause  
+L'orologio batte le tre. : Die Uhr schlägt drei  
+Guarda il calendario. : Sieh in den Kalender  
+Gli standard delle abitazioni sono migliorate. : Der Wohnstandard ist gestiegen  
+Aspettatemi al cancello. : Warte am Tor auf mich  
+Penso che siano le chiavi. Sì, lo sono. : Ich glaube, es sind Schlüssel. Ja, das sind sie  
+Sai quante camere da letto ci saranno? : Weißt du, wie viele Schlafzimmer es geben wird?  
+nella mia stanza : in meinem Zimmer  
+Sei a casa? : Bist du zu Hause?  
+Aspettami! : Warte auf mich!  
+La parete è arancione e blu. : Die Wand ist orange und blau  

@@ -1,0 +1,58 @@
+Könnten Sie bitte das Licht einschalten? : Può accendere la luce, per favore?  
+Er wohnt im fünften Stock. : Abita al quinto piano.  
+Ich muss auf die Toilette. Die erste Tür links. : Devo andare in bagno. Prima porta a sinistra.  
+Kann ich eine Dusche nehmen? : Posso fare una doccia?  
+Hier sollte ein Sicherheitsschloss angebracht werden. : Una serratura di sicurezza dovrebbe essere installata qui.  
+Ich habe einen Hund. : Ho un cane.  
+Er ist zu Hause. : Lui è a casa.  
+Ich werde um Mitternacht zu Hause sein. : Sarò a casa per mezzanotte.  
+Er ist normalerweise zu Hause. : Di solito è a casa.  
+Er wohnt in einem Appartement. : Lui vive in un appartamento.  
+Bitte sei leise. : Per favore, fai silenzio.  
+Wo wohnt sie denn? : Dove vive?  
+Er will nach Hause gehen. : Vuole andare a casa.  
+Hast du die Finanzierung für das Haus erhalten? : Hai ricevuto il finanziamento per la casa?  
+Kannst Du die Tür schließen? : Puoi chiudere la porta?  
+Es ist mein Haus. : È casa mia.  
+Sie ist im Schlafzimmer. : Lei è in camera da letto.  
+Weißt du, wie viele Schlafzimmer es geben wird? : Sai quante camere da letto ci saranno?  
+Spül das Geschirr. : Lava i piatti.  
+Gibt es in dem Gebäude einen Aufzug? : C'è un ascensore nell'edificio?  
+Er wohnt in einem kleinen Haus. : Vive in una piccola casa.  
+Warte auf mich! : Aspettami!  
+Darf ich Ihr Bad benutzen? : Posso usare il suo bagno?  
+Warte am Tor auf mich. : Aspettatemi al cancello.  
+Die Wand ist orange und blau. : La parete è arancione e blu.  
+Er wohnt irgendwo im Süden. : Vive da qualche parte nel sud.  
+Siehst du das Feuer? Lauf weg! : Vedi il fuoco? Scappa!  
+auf dem Tisch : sul tavolo  
+Sieh in den Kalender. : Guarda il calendario.  
+Sind sie drinnen? : Sono all'interno?  
+Es ist im Wohnzimmer. : È in soggiorno.  
+Wir gehen normalerweise am Freitag einkaufen. : Di solito andiamo a fare shopping il venerdì.  
+Sie ist zu Hause. : Lei è a casa.  
+Ich will nur im Bett liegen. : Voglio solo stare nel mio letto.  
+Schau aus dem Fenster. : Guarda fuori dalla finestra  
+Spült bitte das Geschirr. : Per favore, lavate i piatti.  
+Gibt es einen Garten hinter Ihrem Haus? : C'è un giardino dietro casa sua?  
+Ich glaube, es sind Schlüssel. Ja, das sind sie. : Penso che siano le chiavi. Sì, lo sono.  
+Ich rasiere mich jeden Morgen. : Mi rado ogni mattina.  
+Gibt es einen Garten hinter Ihrem Haus? : C'è un giardino dietro casa sua?  
+Siehst du den Eingang? : Vedi l'ingresso?  
+Es ist irgendwo auf dem Boden. : È da qualche parte sul pavimento.  
+Unser Haus ist sehr groß. : La nostra casa è molto grande.  
+Wie lautet deine Adresse? : Qual è il tuo indirizzo?  
+Deine Wohnung ist sehr schön. : Il tuo appartamento è molto bello.  
+Ist das dein Buch? : È il tuo libro?  
+Die Uhr schlägt drei. : L'orologio batte le tre.  
+Er wohnt auf der oberen Seite. : Vive nella parte alta.  
+Bist du zu Hause? : Sei a casa?  
+Wo ist die Küche? : Dov'è la cucina?  
+Es ist sehr bequem. : È molto comodo.  
+Sie wohnt in Südengland. : Vive nel sud dell'Inghilterra.  
+Setz dich auf den Stuhl. : Siediti sulla sedia.  
+Das ist unser neuer Swimming-Pool. : Questa è la nostra nuova piscina.  
+Sie sind zu Hause. : Sono a casa.  
+Bist du zu Hause? : Sei a casa?  
+in meinem Zimmer : nella mia stanza  
+Sie sind nach Hause gegangen. : Sono andati a casa.  
