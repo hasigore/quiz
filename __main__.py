@@ -28,7 +28,6 @@ def main():
     
     config = Config(config_file=config_file)
 
-    print(f"\nHeading: {config.deck_file}\n")
     deck = Deck(config=config)
 
     quiz = Quiz(config=config, deck=deck)

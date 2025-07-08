@@ -1,4 +1,4 @@
-from sources.file import get_decks_from_file, get_heading_from_file, get_url_from_file, create_repeat_file_if_missing, refresh_repeats, save_repeats
+from sources.file import get_decks_from_file, get_heading_from_file, get_url_from_file, create_repeat_file_if_missing, get_repeats, save_repeats
 
 class Deck:
     def __init__(self, config):
@@ -15,8 +15,7 @@ class Deck:
     @property
     def separator(self):
         separator = self._config.separator
-        #print(f"Using separator: _{separator}_")
-        return self._config.separator
+        return separator
     
     @property
     def heading(self):
@@ -55,17 +54,18 @@ class Deck:
     @property
     def repeats(self):
         create_repeat_file_if_missing(self.repeat_file, self.decks, self.repeat, self.separator)
-        self._repeats = refresh_repeats(self.repeat_file, self.separator)
+        self._repeats = get_repeats(self.repeat_file, self.separator)
         return self._repeats
     
     @property
     def reverse_repeats(self):
         create_repeat_file_if_missing(self.reverse_repeat_file, self.decks, self.reverse_repeat, self.separator)
-        self._reverse_repeats = refresh_repeats(self.reverse_repeat_file, self.separator)
+        self._reverse_repeats = get_repeats(self.reverse_repeat_file, self.separator)
         return self._reverse_repeats
     
     def __decrement_repeat(self, phrase, repeats, repeat_file, separator):
         if phrase in repeats:
+            print(f"Decrementing repeat for phrase: {phrase}")
             repeats[phrase] -= 1
             if repeats[phrase] < 0:
                 repeats[phrase] = 0
@@ -73,23 +73,24 @@ class Deck:
     
     def __increment_repeat(self, phrase, repeats, max_repeats, repeat_file, separator):
         if phrase in repeats:
+            print(f"Incrementing repeat for phrase: {phrase}")
             repeats[phrase] += 1
             if repeats[phrase] > max_repeats:
                 repeats[phrase] = max_repeats
             save_repeats(repeat_file, repeats, separator)
 
     def increment_repeat(self, phrase):
-        self._repeats = refresh_repeats(self.repeat_file, self.separator)
+        self._repeats = get_repeats(self.repeat_file, self.separator)
         self.__increment_repeat(phrase, self._repeats, self.repeat, self.repeat_file, self.separator)
     
     def increment_reverse_repeat(self, phrase):
-        self._reverse_repeats = refresh_repeats(self.reverse_repeat_file, self.separator)
+        self._reverse_repeats = get_repeats(self.reverse_repeat_file, self.separator)
         self.__increment_repeat(phrase, self._reverse_repeats, self.reverse_repeat, self.reverse_repeat_file, self.separator)
     
     def decrement_repeat(self, phrase):
-        self._repeats = refresh_repeats(self.repeat_file, self.separator)
+        self._repeats = get_repeats(self.repeat_file, self.separator)
         self.__decrement_repeat(phrase, self._repeats, self.repeat_file, self.separator)
         
     def decrement_reverse_repeat(self, phrase):
-        self._reverse_repeats = refresh_repeats(self.reverse_repeat_file, self.separator)
+        self._reverse_repeats = get_repeats(self.reverse_repeat_file, self.separator)
         self.__decrement_repeat(phrase, self._reverse_repeats, self.reverse_repeat_file, self.separator)

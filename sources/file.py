@@ -43,13 +43,13 @@ def create_repeat_file_if_missing(repeat_file, decks, repeat, separator):
                 normalized_source = normalize_text(source)
                 f.write(f"{normalized_source}{separator}{repeat}\n")
 
-def refresh_repeats(repeat_file, separator):
+def get_repeats(repeat_file, separator):
     repeats = {}
     if not os.path.exists(repeat_file):
         return repeats
     
-    with open(repeat_file, 'r', encoding='utf-8') as f:
-        for line in f:
+    with open(repeat_file, 'r', encoding='utf-8') as file:
+        for line in file:
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
@@ -61,15 +61,6 @@ def refresh_repeats(repeat_file, separator):
     return repeats
 
 def save_repeats(repeat_filename, repeats, separator):
-    with open(repeat_filename, 'w', encoding='utf-8') as f:
+    with open(repeat_filename, 'w', encoding='utf-8') as file:
         for source, repeat in repeats.items():
-            f.write(f"{source}{separator}{repeat}\n")
-
-def decrement_phrase_repeat(phrase, repeats, repeat_file, separator):
-    current_repeat = repeats[phrase]
-    if current_repeat > 0:
-        repeats[phrase] = current_repeat - 1
-    else:
-        repeats[phrase] = 0
-    save_repeats(repeat_file, repeats, separator)
-    return repeats 
+            file.write(f"{source}{separator}{repeat}\n")
