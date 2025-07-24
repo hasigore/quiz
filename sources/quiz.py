@@ -92,7 +92,7 @@ class Quiz:
 
 
     def loop_reverse(self):
-        # Assign a "repeat count" to each sentence; start with 3 repetitions each
+        # Assign a "repeat count" to each sentence, start with 3 repetitions each
         clear_screen()
         
         #print("Press '1/y/f' if you know the deck, '0/n/j' if not and for 'e' exit.\n")
