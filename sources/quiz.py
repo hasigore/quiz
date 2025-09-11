@@ -43,7 +43,7 @@ class Quiz:
         choice = 0
         while self.still_items_to_repeat():
             #new_current_normalized_phrase = random.choice(list(self.deck.repeats.keys()))
-            new_current_normalized_phrase = choice
+            new_current_normalized_phrase = list(self.deck.repeats.keys())[choice]
             choice = (choice + 1) % len(self.deck.repeats)
             #print(f"Current phrase: {current_normalized_phrase}")
             current_repeat_count = self.deck.repeats[new_current_normalized_phrase]
@@ -107,7 +107,7 @@ class Quiz:
         while self.still_items_to_reverse_repeat():
 
             #new_current_normalized_phrase = random.choice(list(self.deck.reverse_repeats.keys()))
-            new_current_normalized_phrase = choice
+            new_current_normalized_phrase = list(self.deck.reverse_repeats.keys())[choice]
             choice = (choice + 1) % len(self.deck.reverse_repeats)
 
             #print(f"Current phrase: {current_normalized_phrase}")
@@ -121,10 +121,10 @@ class Quiz:
             number_of_items_to_repeat = self.number_of_items_to_repeat(self.deck.reverse_repeats)
             #print(f"number_of_items_to_repeat: {number_of_items_to_repeat}")
             #print(f"Last {number_of_phrases_to_remember} phrases : {last_n_phrases}.")
-            if new_current_normalized_phrase in last_n_phrases and number_of_items_to_repeat > number_of_phrases_to_remember:
+            #if new_current_normalized_phrase in last_n_phrases and number_of_items_to_repeat > number_of_phrases_to_remember:
                 #print(f"Skipping phrase {new_current_normalized_phrase} as it is in the last {number_of_phrases_to_remember} phrases.")
                 #print(f"Last phrases: {last_n_phrases}")
-                continue
+            #    continue
 
             current_normalized_phrase = new_current_normalized_phrase
             last_n_phrases.append(current_normalized_phrase)
