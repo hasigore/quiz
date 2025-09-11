@@ -40,10 +40,11 @@ class Quiz:
         current_normalized_phrase = None
         last_n_phrases = []
         number_of_phrases_to_remember = 3  # Number of phrases to remember in the last_n_phrases list
+        choice = 0
         while self.still_items_to_repeat():
-
-            new_current_normalized_phrase = random.choice(list(self.deck.repeats.keys()))
-            
+            #new_current_normalized_phrase = random.choice(list(self.deck.repeats.keys()))
+            new_current_normalized_phrase = choice
+            choice = (choice + 1) % len(self.deck.repeats)
             #print(f"Current phrase: {current_normalized_phrase}")
             current_repeat_count = self.deck.repeats[new_current_normalized_phrase]
             #print(f"Current repeat count: {current_repeat_count}")
