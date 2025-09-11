@@ -65,7 +65,7 @@ class Deck:
     
     def __decrement_repeat(self, phrase, repeats, repeat_file, separator):
         if phrase in repeats:
-            print(f"Decrementing repeat for phrase: {phrase}")
+            #print(f"Decrementing repeat for phrase: {phrase}")
             repeats[phrase] -= 1
             if repeats[phrase] < 0:
                 repeats[phrase] = 0
@@ -73,7 +73,7 @@ class Deck:
     
     def __increment_repeat(self, phrase, repeats, max_repeats, repeat_file, separator):
         if phrase in repeats:
-            print(f"Incrementing repeat for phrase: {phrase}")
+            #print(f"Incrementing repeat for phrase: {phrase}")
             repeats[phrase] += 1
             if repeats[phrase] > max_repeats:
                 repeats[phrase] = max_repeats

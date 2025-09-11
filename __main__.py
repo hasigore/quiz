@@ -9,7 +9,7 @@ def config_file_is_not_valid(config_file=None):
         print("No config file provided.")
         return True
     if not config_file.endswith('.ini'):
-        print("Config file must be an .ini file.")
+        print(f"Config file must be an .ini file, but ends with: \"{config_file[-1]}\"")
         return True
     config_directory = os.path.dirname(config_file)
     if not os.path.exists(config_directory):
@@ -20,8 +20,21 @@ def config_file_is_not_valid(config_file=None):
         return True
     return False
 
+def read_config_path(config_file_path):
+    try:
+        with open(config_file_path, "r") as f:
+            path = f.read().strip()
+            return path
+    except FileNotFoundError:
+        print(f"Config path file not found: {config_file_path}")
+        return None
+
 def main():
-    config_file = 'decks/italienisch/italienisch–wortschatz-fuer-die-anfaenger-a1-a2/config.ini'
+    config_file_path="decks/config-path.txt"
+    config_file = read_config_path(config_file_path)
+    if not config_file:
+        return
+    
     if config_file_is_not_valid(config_file=config_file):
         print(f"Invalid config file: {config_file}")
         return

@@ -1,0 +1,1 @@
+decks/spanish/buenos-dias/config.ini

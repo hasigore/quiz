@@ -76,10 +76,10 @@ class Quiz:
             clear_screen()
             
             print(f"{source}")
-            self.audio.play(sound_file)
+            #self.audio.play(sound_file)
             print(f"{target}\n\n")
 
-            print(f"Current normalized phrase: {current_normalized_phrase}\n")
+            #(f"Current normalized phrase: {current_normalized_phrase}\n")
             if user_input == '1':
                 self.deck.decrement_repeat(phrase=current_normalized_phrase)
             
@@ -148,7 +148,7 @@ class Quiz:
             #if current_repeat_count == self.deck.reverse_repeat:
             #    time.sleep(3)  # Wait for 3 seconds before playing the sound again
             #    self.audio.play(sound_file)
-            print(f"Current normalized phrase: {current_normalized_phrase}\n")
+            #print(f"Current normalized phrase: {current_normalized_phrase}\n")
             if user_input == '1':
                 self.deck.decrement_reverse_repeat(phrase=current_normalized_phrase)
             
