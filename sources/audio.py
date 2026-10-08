@@ -1,5 +1,6 @@
 import os
 from gtts import gTTS
+# playsound3 is a fork of playsound that works with Python 3.10 and above, and is compatible with Windows, macOS, and Linux.
 from playsound3 import playsound
 
 class Audio:
